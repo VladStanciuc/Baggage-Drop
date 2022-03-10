@@ -1,0 +1,409 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> WARNING:Xst:1583 - You are using an internal switch '-use_new_parser'.
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tester.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tester"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Use New Parser                     : yes
+Top Module Name                    : display_and_drop
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Vlad\Desktop\tester_tema_1\baggage_drop.v" into library work
+Parsing module <baggage_drop>.
+Parsing module <sensors_input>.
+Parsing module <square_root>.
+Parsing module <display_and_drop>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <display_and_drop>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <display_and_drop>.
+    Related source file is "C:\Users\Vlad\Desktop\tester_tema_1\baggage_drop.v".
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg2<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg2<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg2<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg2<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <seven_seg3<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 16-bit comparator greater for signal <t_act[15]_t_lim[15]_LessThan_2_o> created at line 148
+    Found 16-bit comparator greater for signal <t_lim[15]_t_act[15]_LessThan_3_o> created at line 157
+    Summary:
+	inferred   8 Latch(s).
+	inferred   2 Comparator(s).
+	inferred   5 Multiplexer(s).
+Unit <display_and_drop> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Latches                                              : 8
+ 1-bit latch                                           : 8
+# Comparators                                          : 2
+ 16-bit comparator greater                             : 2
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+WARNING:Xst:1710 - FF/Latch <seven_seg2_6> (without init value) has a constant value of 1 in block <display_and_drop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seven_seg2_0> (without init value) has a constant value of 0 in block <display_and_drop>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Comparators                                          : 2
+ 16-bit comparator greater                             : 2
+# Multiplexers                                         : 5
+ 1-bit 2-to-1 multiplexer                              : 5
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <seven_seg2_6> (without init value) has a constant value of 1 in block <display_and_drop>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <seven_seg2_0> (without init value) has a constant value of 0 in block <display_and_drop>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <display_and_drop> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block display_and_drop, actual ratio is 0.
+Latch seven_seg1_2 has been replicated 3 time(s) to handle iob=true attribute.
+Latch seven_seg1_0 has been replicated 4 time(s) to handle iob=true attribute.
+Latch seven_seg1_4 has been replicated 2 time(s) to handle iob=true attribute.
+Latch seven_seg2_5 has been replicated 1 time(s) to handle iob=true attribute.
+Latch seven_seg2_2 has been replicated 1 time(s) to handle iob=true attribute.
+Latch seven_seg3_6 has been replicated 2 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : tester.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 70
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 35
+#      MUXCY                       : 32
+#      VCC                         : 1
+# FlipFlops/Latches                : 19
+#      LDCE                        : 9
+#      LDPE                        : 10
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# IO Buffers                       : 62
+#      IBUF                        : 33
+#      OBUF                        : 29
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                       18  out of   4656     0%  
+ Number of 4 input LUTs:                 36  out of   9312     0%  
+ Number of IOs:                          62
+ Number of bonded IOBs:                  62  out of    232    26%  
+    IOB Flip Flops:                      19
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+drop_en                            | IBUF+BUFG              | 19    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-------------------------------------------------------+------------------------+-------+
+Control Signal                                         | Buffer(FF name)        | Load  |
+-------------------------------------------------------+------------------------+-------+
+t_act[15]_GND_1_o_AND_1_o(t_act[15]_GND_1_o_AND_1_o1:O)| NONE(seven_seg3_6)     | 19    |
+-------------------------------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: 7.441ns
+   Maximum output required time after clock: 4.368ns
+   Maximum combinational path delay: 9.397ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'drop_en'
+  Total number of paths / destination ports: 2352 / 30
+-------------------------------------------------------------------------
+Offset:              7.441ns (Levels of Logic = 19)
+  Source:            t_act<0> (PAD)
+  Destination:       seven_seg1_0 (LATCH)
+  Destination Clock: drop_en falling
+
+  Data Path: t_act<0> to seven_seg1_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  t_act_0_IBUF (t_act_0_IBUF)
+     LUT2:I0->O            1   0.704   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_lut<0> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<0> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<1> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<2> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<3> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<4> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<5> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<6> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<7> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<8> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<9> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<10> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<11> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<12> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<13> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<14> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<14>)
+     MUXCY:CI->O           8   0.331   0.932  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<15> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<15>)
+     LUT2:I0->O           19   0.704   1.085  t_act[15]_t_lim[15]_OR_32_o1 (t_act[15]_t_lim[15]_OR_32_o)
+     LDPE:GE                   0.555          seven_seg1_0
+    ----------------------------------------
+    Total                      7.441ns (4.802ns logic, 2.639ns route)
+                                       (64.5% logic, 35.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'drop_en'
+  Total number of paths / destination ports: 19 / 19
+-------------------------------------------------------------------------
+Offset:              4.368ns (Levels of Logic = 1)
+  Source:            seven_seg1_2_1 (LATCH)
+  Destination:       seven_seg1<6> (PAD)
+  Source Clock:      drop_en falling
+
+  Data Path: seven_seg1_2_1 to seven_seg1<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDCE:G->Q             1   0.676   0.420  seven_seg1_2_1 (seven_seg1_2_1)
+     OBUF:I->O                 3.272          seven_seg1_6_OBUF (seven_seg1<6>)
+    ----------------------------------------
+    Total                      4.368ns (3.948ns logic, 0.420ns route)
+                                       (90.4% logic, 9.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 49 / 1
+-------------------------------------------------------------------------
+Delay:               9.397ns (Levels of Logic = 20)
+  Source:            t_act<0> (PAD)
+  Destination:       drop_activated<0> (PAD)
+
+  Data Path: t_act<0> to drop_activated<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  t_act_0_IBUF (t_act_0_IBUF)
+     LUT2:I0->O            1   0.704   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_lut<0> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<0> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<1> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<2> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<3> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<4> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<5> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<5>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<6> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<6>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<7> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<7>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<8> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<8>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<9> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<9>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<10> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<10>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<11> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<11>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<12> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<12>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<13> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<13>)
+     MUXCY:CI->O           1   0.059   0.000  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<14> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<14>)
+     MUXCY:CI->O           8   0.331   0.836  Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<15> (Mcompar_t_act[15]_t_lim[15]_LessThan_2_o_cy<15>)
+     LUT2:I1->O            1   0.704   0.420  drop_activated1 (drop_activated_0_OBUF)
+     OBUF:I->O                 3.272          drop_activated_0_OBUF (drop_activated<0>)
+    ----------------------------------------
+    Total                      9.397ns (7.519ns logic, 1.878ns route)
+                                       (80.0% logic, 20.0% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.24 secs
+ 
+WARNING:Xst:3152 - You have chosen to run a version of XST which is not the default solution
+   for the specified device family. You are free to use it in order to take
+   advantage of its enhanced HDL parsing/elaboration capabilities. However,
+   please be aware that you may be impacted by  language support differences.
+   This version may also result in circuit performance and device utilization
+   differences for your particular design. You can always revert back to the
+   default XST solution by setting the "use_new_parser" option to value "no" 
+   on the XST command line or in the XST process properties panel.
+--> 
+
+Total memory usage is 4470204 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
